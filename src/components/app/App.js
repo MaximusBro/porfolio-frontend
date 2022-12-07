@@ -1,21 +1,18 @@
+import { useState } from "react";
 import AppHeader from "../appHeader/AppHeader";
 import AsideInfo from "../asideInfo/AsideInfo";
-import PostForm from "../postForm/PostForm";
-import PostList from "../postList/PostList";
-import StoryList from "../storyList/StoryList";
-
+import { MainPage } from "../pages/index"
 function App() {
+	const [burger, setBurger] = useState(false);
 	return (
 		<>
 
 			<div className="App">
-				<AsideInfo />
-				<AppHeader />
+				<AsideInfo burger={burger} />
+				<AppHeader setBurger={setBurger} burger={burger} />
 
 				<div className="wrapper">
-					<StoryList />
-					<PostForm />
-					<PostList />
+					<MainPage />
 				</div>
 
 			</div>

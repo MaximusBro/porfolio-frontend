@@ -1,10 +1,11 @@
+
 import "../appHeader/appHeader.scss";
 import { GiHamburgerMenu } from "react-icons/gi"
-const AppHeader = () => {
+const AppHeader = ({ setBurger, burger }) => {
 	return (
 		<header className="header">
 			<div className="header-burger">
-				<GiHamburgerMenu />
+				<GiHamburgerMenu onClick={() => setBurger(!burger)} />
 			</div>
 			<div className="header-nav">
 				<nav>

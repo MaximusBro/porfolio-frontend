@@ -5,9 +5,9 @@ import instagram from "../../img/svg/instagram.svg"
 import vk from "../../img/svg/vk.svg"
 import pinterest from "../../img/svg/pinterest.svg"
 
-const AsideInfo = () => {
+const AsideInfo = ({ burger }) => {
 	return (
-		<aside className="aside">
+		<aside className="aside" style={burger ? { "display": "block" } : { "": "" }}>
 			<div className="aside-header">
 				<img src={backgroundAside} alt="" />
 			</div>
