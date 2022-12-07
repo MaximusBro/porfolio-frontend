@@ -1,0 +1,106 @@
+.aside {
+	position: relative;
+	max-width: 300px;
+	height: 290vh;
+	float: left;
+	background: #202020;
+	box-shadow: 5px 0px 15px rgba(5, 5, 5, 0.1);
+	&-main {
+		position: relative;
+		&-intro {
+			text-align: center;
+			h2 {
+				font-family: "Roboto";
+				font-style: normal;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 21px;
+				text-align: center;
+
+				color: #ffffff;
+			}
+			p {
+				font-family: "Roboto";
+				font-style: normal;
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 16px;
+				text-align: center;
+				color: #dedede;
+			}
+			&__networks {
+				margin-top: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 15px;
+			}
+			&__nav {
+				display: none;
+				margin: 30px 0;
+				ul {
+					margin-left: 30px;
+					display: flex;
+					flex-direction: column;
+					gap: 10px;
+					font-family: "Roboto";
+					font-style: normal;
+					font-weight: 300;
+					font-size: 16px;
+					line-height: 19px;
+					color: #ffffff;
+					li {
+						ul {
+							margin-left: 40px;
+						}
+					}
+				}
+			}
+		}
+		&__description {
+			margin: 60px 0;
+			p {
+				max-width: 260px;
+				margin: 0 auto;
+			}
+			text-align: center;
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 18px;
+			text-align: center;
+			color: #ffffff;
+		}
+		&__links {
+			margin: 0 20px;
+			display: flex;
+			justify-content: space-between;
+			text-align: center;
+			align-items: center;
+			button {
+				display: block;
+				width: 120px;
+				height: 40px;
+				box-shadow: 0px 7px 17px -10px rgba(242, 63, 63, 0.2);
+				border: none;
+				border-radius: 25px;
+
+				font-family: "Roboto";
+				font-style: normal;
+				font-weight: 500;
+				font-size: 12px;
+				line-height: 14px;
+				text-align: center;
+				color: #ffffff;
+			}
+			button:first-child {
+				background: #ed3024;
+			}
+			button:last-child {
+				background: #3137c9;
+			}
+		}
+	}
+}
+@import "asideInfoMedia.scss";

@@ -1,0 +1,104 @@
+.postlist {
+	max-width: 100%;
+	max-height: 100%;
+	&-column {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		&-card {
+			max-width: 100%;
+			max-height: 450px;
+			background: #202020;
+			box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.35);
+			border: none;
+			border-radius: 5px;
+			&__title {
+				max-width: 100%;
+				max-height: 300px;
+				img {
+					max-width: 100%;
+					max-height: 100%;
+					object-fit: cover;
+				}
+			}
+			&__text {
+				padding: 25px 20px;
+				h2 {
+					font-family: "Roboto";
+					font-style: normal;
+					font-weight: 500;
+					font-size: 18px;
+					line-height: 21px;
+					color: #ffffff;
+					margin-bottom: 15px;
+				}
+				p {
+					font-family: "Roboto";
+					font-style: normal;
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 21px;
+					color: #d2d2d2;
+				}
+			}
+			&__footer {
+				margin-top: 21px;
+				display: flex;
+				justify-content: space-between;
+				div:first-child {
+					display: flex;
+				}
+				p {
+					font-family: "Lato";
+					font-style: normal;
+					font-weight: 400;
+					font-size: 12px;
+					line-height: 14px;
+					color: #828282;
+				}
+				a {
+					font-family: "Roboto";
+					font-style: normal;
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 16px;
+					color: #107eff;
+				}
+			}
+		}
+	}
+	&-arrows {
+		margin: 80px 0;
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+		button {
+			background: #0d0d0d;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+			border: none;
+			border-radius: 3px;
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 16px;
+			text-align: center;
+			color: #ffffff;
+			width: 40px;
+			height: 40px;
+		}
+		button:hover {
+			background: #104be3;
+			border: none;
+		}
+		.active {
+			background: #104be3;
+		}
+
+		&__list {
+			display: flex;
+			gap: 10px;
+		}
+	}
+}
+@import "postListMedia.scss";
