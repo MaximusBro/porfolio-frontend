@@ -1,13 +1,13 @@
-import "../asideInfo/asideInfo.scss";
+import { Link } from "react-router-dom";
 import avatar from "../../img/png/avatar.png";
 import backgroundAside from "../../img/jpg/backgroundAside.jpg";
 import instagram from "../../img/svg/instagram.svg"
 import vk from "../../img/svg/vk.svg"
 import pinterest from "../../img/svg/pinterest.svg"
-
+import "../asideInfo/asideInfo.scss";
 const AsideInfo = ({ burger }) => {
 	return (
-		<aside className="aside" style={burger ? { "display": "block" } : { "": "" }}>
+		<aside className={burger ? "aside active" : "aside"}>
 			<div className="aside-header">
 				<img src={backgroundAside} alt="" />
 			</div>
@@ -32,13 +32,15 @@ const AsideInfo = ({ burger }) => {
 								<a href="#">Topics</a>
 								<ul>
 									<li><a href="#">Creating sites</a></li>
-									<li><a href="#"></a>Internet marketing</li>
-									<li><a href="#"></a>Video</li>
+									<li><a href="#">Internet marketing</a></li>
+									<li><a href="#">Video</a></li>
 								</ul>
 							</li>
-							<li>About Me</li>
-							<li>Ad</li>
-							<li>Profile</li>
+							<li><a>About Me</a></li>
+							<li>
+								<a>AD</a>
+							</li>
+							<li><a>Profile</a></li>
 						</ul>
 					</div>
 					<div className="aside-main__description">
@@ -48,8 +50,8 @@ const AsideInfo = ({ burger }) => {
 						</p>
 					</div>
 					<div className="aside-main__links">
-						<button href="#">Мои работы</button>
-						<button href="#">Написать мне </button>
+						<Link to={"/works"}><button className="button" style={{ "backgroundColor": "#ed3024" }}>Мои работы</button></Link>
+						<Link to={"/"}><button className="button" style={{ "backgroundColor": "#3137c9" }}>Write me</button> </Link>
 					</div>
 				</div>
 			</div>

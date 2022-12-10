@@ -14,6 +14,14 @@
 	src: local(""), url("../../public/fonts/roboto-v30-latin-regular.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("../../public/fonts/roboto-v30-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* lato-regular - latin */
+@font-face {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	src: local(""), url("../../public/fonts/lato-v23-latin-regular.woff2") format("woff2"),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */ url("../../public/fonts/lato-v23-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 body {
 	box-sizing: border-box;
 }
@@ -22,6 +30,8 @@ a {
 	color: white;
 }
 body {
+	font-family: "Roboto", "Lato";
+	font-style: normal;
 	background-color: #181818;
 }
 .wrapper {
@@ -30,4 +40,15 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+.visible {
+	opacity: 1;
+	pointer-events: all;
+	transition: all 0.4s;
+}
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.4s;
+}
 @import "styleMedia.scss";
+@import "_mixins.scss";

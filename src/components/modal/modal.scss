@@ -1,0 +1,107 @@
+@import "../../style/_mixins.scss";
+.modal {
+	background-color: rgba($color: #000000, $alpha: 0.4);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	overflow: hidden;
+	overflow-y: auto;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+	padding: 30px 0;
+	&-contact {
+		width: 30%;
+		background: #202020;
+		box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.25);
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		&__close {
+			margin: 20px 20px 0 0;
+			color: white;
+			text-align: end;
+			button {
+				width: 20px;
+				height: 20px;
+				color: white;
+				background: none;
+				border: none;
+			}
+			button:hover {
+				color: #107eff;
+			}
+		}
+		&__form {
+			form {
+				margin-top: 40px;
+				display: flex;
+				flex-direction: column;
+				gap: 25px;
+				input {
+					width: 70%;
+					align-self: center;
+					border: none;
+					border-bottom: 1px solid #3f3f3f;
+					@include roboto;
+					font-size: 14px;
+					line-height: 16px;
+					background: none;
+					color: #ffffff;
+				}
+				input:focus {
+					transition: all 0.2s;
+					border-bottom: 1px solid #107eff;
+				}
+				input:focus::placeholder {
+					color: transparent;
+				}
+				input::placeholder {
+					font-family: "Roboto";
+					font-style: normal;
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 16px;
+
+					color: rgba(255, 255, 255, 0.2);
+				}
+
+				button[type="submit"] {
+					width: 91px;
+					height: 30px;
+					border: none;
+					margin-left: 15%;
+					background: #3137c9;
+					box-shadow: 0px 4px 15px -7px rgba(48, 55, 201, 0.3);
+					border-radius: 5px;
+
+					font-family: "Roboto";
+					font-style: normal;
+					font-weight: 400;
+					font-size: 12px;
+					line-height: 14px;
+					color: #ffffff;
+				}
+			}
+		}
+		&__footer {
+			margin: 40px 0 25px 0;
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 16px;
+			color: #b3b3b3;
+		}
+		&__list {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}

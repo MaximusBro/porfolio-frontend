@@ -1,2 +1,3 @@
 import MainPage from "./MainPage";
-export { MainPage };
+import MyWorksPage from "./MyWorksPage";
+export { MainPage, MyWorksPage };

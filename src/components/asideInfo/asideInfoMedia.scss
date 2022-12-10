@@ -1,6 +1,11 @@
-.aside {
-	@media screen and (max-width: 924px) {
-		display: none;
+@media screen and (max-width: 924px) {
+	.aside {
+		height: 302%;
+		transition: 0.4s all;
+		position: absolute;
+		left: -50%;
+		opacity: 0;
+		pointer-events: none;
 		background: #0d0d0d;
 		box-shadow: 9px 0px 15px rgba(0, 0, 0, 0.3), inset -10px 0px 5px rgba(5, 5, 5, 0.35);
 		&-main {
@@ -43,5 +48,10 @@
 				display: none;
 			}
 		}
+	}
+	.active {
+		left: 0;
+		opacity: 1;
+		pointer-events: all;
 	}
 }
