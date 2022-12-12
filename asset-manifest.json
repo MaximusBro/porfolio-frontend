@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/frontend-blog/static/css/main.5da00c3d.css",
+    "main.js": "/frontend-blog/static/js/main.404a7eeb.js",
+    "static/media/work1.jpg": "/frontend-blog/static/media/work1.ae95aa62bf623e4eb2c6.jpg",
+    "static/media/post1.jpg": "/frontend-blog/static/media/post1.de2d653a8dbeb70c5bb7.jpg",
+    "static/media/backgroundAside.jpg": "/frontend-blog/static/media/backgroundAside.9b72072265f1ecc480ca.jpg",
+    "static/media/backgroundStory.jpg": "/frontend-blog/static/media/backgroundStory.ecd32bd69eb8b7514e3b.jpg",
+    "static/media/lato-v23-latin-regular.woff": "/frontend-blog/static/media/lato-v23-latin-regular.292725486219768e6225.woff",
+    "static/media/avatar.png": "/frontend-blog/static/media/avatar.9a63b7e02a812cb4b19b.png",
+    "static/media/lato-v23-latin-regular.woff2": "/frontend-blog/static/media/lato-v23-latin-regular.be36596da218e1eec01c.woff2",
+    "static/media/roboto-v30-latin-300.woff": "/frontend-blog/static/media/roboto-v30-latin-300.c2f7ab22cb9cbd074c3a.woff",
+    "static/media/roboto-v30-latin-regular.woff": "/frontend-blog/static/media/roboto-v30-latin-regular.f1e2a76794cb86b2aa8e.woff",
+    "static/media/roboto-v30-latin-regular.woff2": "/frontend-blog/static/media/roboto-v30-latin-regular.b009a76ad6afe4ebd301.woff2",
+    "static/media/roboto-v30-latin-300.woff2": "/frontend-blog/static/media/roboto-v30-latin-300.c48fb6765a9fcb00b330.woff2",
+    "static/media/instagram.svg": "/frontend-blog/static/media/instagram.baaa04738d9b12d63b7c40bbc1d8222c.svg",
+    "static/media/vk.svg": "/frontend-blog/static/media/vk.9adb95ad5179acc3a7a15ddc9b4da6d9.svg",
+    "static/media/pinterest.svg": "/frontend-blog/static/media/pinterest.5bf5745b2d1295ee5a45912bebb0f4a8.svg",
+    "index.html": "/frontend-blog/index.html",
+    "main.5da00c3d.css.map": "/frontend-blog/static/css/main.5da00c3d.css.map",
+    "main.404a7eeb.js.map": "/frontend-blog/static/js/main.404a7eeb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5da00c3d.css",
+    "static/js/main.404a7eeb.js"
+  ]
+}
