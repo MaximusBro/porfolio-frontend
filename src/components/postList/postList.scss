@@ -4,10 +4,12 @@
 	&-column {
 		display: flex;
 		flex-direction: column;
-		gap: 30px;
+		gap: 50px;
 		&-card {
 			max-width: 100%;
-			max-height: 450px;
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
 			background: #202020;
 			box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.35);
 			border: none;
@@ -17,12 +19,13 @@
 				max-height: 300px;
 				img {
 					max-width: 100%;
-					max-height: 100%;
-					object-fit: cover;
+					max-height: 50%;
+					object-fit: contain;
 				}
 			}
 			&__text {
-				padding: 25px 20px;
+				max-height: 100%;
+				padding: 0 20px;
 				h2 {
 					font-family: "Roboto";
 					font-style: normal;
@@ -42,7 +45,7 @@
 				}
 			}
 			&__footer {
-				margin-top: 21px;
+				margin: 3% 0;
 				display: flex;
 				justify-content: space-between;
 				div:first-child {

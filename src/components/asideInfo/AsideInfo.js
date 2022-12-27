@@ -5,7 +5,7 @@ import instagram from "../../img/svg/instagram.svg"
 import vk from "../../img/svg/vk.svg"
 import pinterest from "../../img/svg/pinterest.svg"
 import "../asideInfo/asideInfo.scss";
-const AsideInfo = ({ burger }) => {
+const AsideInfo = ({ burger, modalContact, setModalContact }) => {
 	return (
 		<aside className={burger ? "aside active" : "aside"}>
 			<div className="aside-header">
@@ -40,7 +40,7 @@ const AsideInfo = ({ burger }) => {
 							<li>
 								<a>AD</a>
 							</li>
-							<li><a>Profile</a></li>
+							<li><Link to="/frontend-blog/profile">Profile</Link></li>
 						</ul>
 					</div>
 					<div className="aside-main__description">
@@ -50,8 +50,12 @@ const AsideInfo = ({ burger }) => {
 						</p>
 					</div>
 					<div className="aside-main__links">
-						<Link to={"/works"}><button className="button" style={{ "backgroundColor": "#ed3024" }}>Мои работы</button></Link>
-						<Link to={"/"}><button className="button" style={{ "backgroundColor": "#3137c9" }}>Write me</button> </Link>
+						<Link to={"/porfolio-frontend/works"}><button className="button" style={{ "backgroundColor": "#ed3024" }}>Мои работы</button></Link>
+						<button
+							className="button"
+							style={{ "backgroundColor": "#3137c9" }}
+							onClick={() => setModalContact(!modalContact)}
+						>Write me</button>
 					</div>
 				</div>
 			</div>

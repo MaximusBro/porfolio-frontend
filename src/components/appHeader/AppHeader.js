@@ -17,7 +17,7 @@ const AppHeader = ({ setBurger, burger }) => {
 				<nav>
 					<ul className="header-nav__list">
 						<li className="header-nav__item">
-							<Link to="/">Main</Link>
+							<Link to="/porfolio-frontend">Main</Link>
 						</li>
 						<li className="header-nav__item" ref={sublist} onClick={() => setsublistActive(!sublistActive)}>
 							<a href="#" > TOPICS <span className={sublistActive ? "active" : ""}></span></a>
@@ -38,7 +38,7 @@ const AppHeader = ({ setBurger, burger }) => {
 				</nav>
 			</div>
 			<div className="header-search">
-				<Link to="/profile">PROFILE</Link>
+				<Link to="/porfolio-frontend/profile">PROFILE</Link>
 				<input type="text" placeholder="Поиск по блогу" />
 			</div>
 		</header>

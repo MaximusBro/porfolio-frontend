@@ -1,0 +1,74 @@
+{
+	"posts": [
+		{
+			"category": "создание сайтов",
+			"title": "Как писать код быстро и безболезненно?",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "03.04.2021",
+			"img": "https://expertreviews.b-cdn.net/sites/expertreviews/files/2022/01/best_gaming_pc_primary.jpg"
+		},
+		{
+			"category": "продвижение видео",
+			"title": "Купил новый ноутбук за 150 000 руб",
+			"description": "lorem3",
+			"date": "10.11.2020",
+			"img": "https://i.ytimg.com/vi/-kyuQAcipGY/maxresdefault.jpg"
+		},
+		{
+			"category": "создание сайтов",
+			"title": "Как я сходил на FrontEnd Conf 2025",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "23.01.2020",
+			"img": "https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"
+		},
+		{
+			"category": "создание сайтов",
+			"title": "Как я сходил на FrontEnd Conf 2024",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "23.01.2020",
+			"img": "https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"
+		},
+		{
+			"category": "создание сайтов",
+			"title": "Как я сходил на FrontEnd Conf 2023",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "23.01.2020",
+			"img": "https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"
+		},
+		{
+			"category": "создание сайтов",
+			"title": "Как я сходил на FrontEnd Conf 2022",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "23.01.2020",
+			"img": "https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"
+		},
+		{
+			"category": "создание сайтов",
+			"title": "Как я сходил на FrontEnd Conf 2026",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "23.01.2020",
+			"img": "https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"
+		},
+		{
+			"category": "создание сайтов",
+			"title": "Как я сходил на FrontEnd Conf 2027",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "23.01.2020",
+			"img": "https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"
+		},
+		{
+			"category": "создание сайтов",
+			"title": "Как я сходил на FrontEnd Conf 2028",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "23.01.2020",
+			"img": "https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"
+		},
+		{
+			"category": "создание сайтов",
+			"title": "Как я сходил на FrontEnd Conf 2028",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.",
+			"date": "23.01.2020",
+			"img": "https://image.coolblue.be/1248x535/content/e111e2396926a48e16264f916113e07f"
+		}
+	]
+}

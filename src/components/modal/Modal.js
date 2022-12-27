@@ -1,11 +1,11 @@
 import "../modal/modal.scss";
 
-const Modal = () => {
+const Modal = ({ modalContact, setModalContact }) => {
 	return (
-		<div className="modal hidden">
-			<div className="modal-contact hidden">
+		<div className={modalContact ? "modal visible" : "modal hidden"}>
+			<div className={modalContact ? "modal-contact visible" : "modal-contact hidden"}>
 				<div className="modal-contact__close">
-					<button>&#10006;</button>
+					<button onClick={() => setModalContact(!modalContact)}>&#10006;</button>
 				</div>
 				<div className="modal-contact__form">
 					<form action="">
