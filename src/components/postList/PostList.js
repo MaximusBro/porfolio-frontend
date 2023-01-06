@@ -5,18 +5,8 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import { v4 as uuidv4 } from 'uuid';
 import "../postList/postList.scss";
 
-const PostList = () => {
-	const [postCards, setPostCards] = useState([]);
-	const [counterPost, setCounterPost] = useState(1);
-	const { request } = useHttp();
-
-	useEffect(() => {
-
-		request("http://localhost:3001/posts")
-			.then(data => setPostCards(data))
-			.catch(error => { throw new Error("Failude to get posts", error) })
-		// eslint-disable-next-line
-	}, []);
+const PostList = ({ postCards, setPostCards }) => {
+	const [currentPage, setCounterPost] = useState(1);
 
 	const renderPosts = useCallback((arr, counterPost) => {
 
@@ -27,7 +17,7 @@ const PostList = () => {
 		let result = [];
 		let counter = counterPost - 1;
 
-		for (let i = 0 + counter * 3; i <= 3 + counter * 3; i++) {
+		for (let i = 0 + counter * 3; i <= 2 + counter * 3; i++) {
 			let props = arr[i];
 			if (props === undefined) {
 				break
@@ -39,19 +29,20 @@ const PostList = () => {
 		/* return arr.map(({ ...props }) => {
 			return <PostCard key={uuidv4()} {...props} />
 		}) */
-		console.log(result)
 		return result
 		// eslint-disable-next-line
-	}, [request]);
+	}, [postCards]);
 
 	const renderBtnsList = useCallback((posts) => {
-		const counter = Math.floor(posts.length / 2);
+		let counter = Math.round(posts.length / 2);
+
 		const result = [];
 		for (let i = 1; i < counter; i++) {
+
 			result[i] =
 				<button
 					key={i}
-					className={`postlist-arrows__item ${counterPost === i ? "active" : ""}`}
+					className={`postlist-arrows__item ${currentPage === i ? "active" : ""}`}
 					onClick={() => {
 						setCounterPost(i);
 					}}
@@ -70,7 +61,7 @@ const PostList = () => {
 		setCounterPost(state => plusOrMines ? state - 1 : state + 1);
 	}
 
-	const elementsPost = renderPosts(postCards, counterPost);
+	const elementsPost = renderPosts(postCards, currentPage);
 	const elementsBtn = renderBtnsList(postCards);
 	return (
 		<div className="postlist">
@@ -79,13 +70,13 @@ const PostList = () => {
 			</div>
 			<div className="postlist-arrows">
 				<button><MdKeyboardArrowLeft style={{ "width": "60%", "height": "100%" }}
-					onClick={() => onArrowClick(counterPost, postCards)}
+					onClick={() => onArrowClick(currentPage, postCards)}
 				/></button>
 				<ul className="postlist-arrows__list">
 					{elementsBtn}
 				</ul>
 				<button><MdKeyboardArrowRight style={{ "width": "60%", "height": "100%" }}
-					onClick={() => onArrowClick(counterPost, postCards, false)}
+					onClick={() => onArrowClick(currentPage, postCards, false)}
 
 				/></button>
 			</div>

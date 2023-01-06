@@ -3,14 +3,14 @@ import PostForm from "../postForm/PostForm"
 import PostList from "../postList/PostList"
 import StoryList from "../storyList/StoryList"
 
-const MainPage = () => {
+const MainPage = ({ postCards, setPostCards }) => {
 
 
 	return (
 		<>
 			<StoryList />
-			<PostForm />
-			<PostList />
+			<PostForm setPostCards={setPostCards} />
+			<PostList postCards={postCards} />
 		</>
 	)
 }
