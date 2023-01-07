@@ -1,68 +1,57 @@
-import { useState, useEffect, useCallback } from "react";
-import { useHttp } from "../hooks/http.hook";
+import { useState, useCallback } from "react";
 import { BsDot } from "react-icons/bs"
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import { v4 as uuidv4 } from 'uuid';
 import "../postList/postList.scss";
 
-const PostList = ({ postCards, setPostCards }) => {
-	const [currentPage, setCounterPost] = useState(1);
+const PostList = ({ postCards }) => {
 
-	const renderPosts = useCallback((arr, counterPost) => {
+	const [currentPage, setCurrentPage] = useState(1);
+	const [postsPerPage] = useState(3);
 
-		if (arr.length === 0) {
-			return <h5 className="text-center mt-5">Posts doesn't exist</h5>
-		}
-
-		let result = [];
-		let counter = counterPost - 1;
-
-		for (let i = 0 + counter * 3; i <= 2 + counter * 3; i++) {
-			let props = arr[i];
-			if (props === undefined) {
-				break
-			}
-			result[i] =
-				<PostCard key={uuidv4()} {...props} />
-
-		}
-		/* return arr.map(({ ...props }) => {
-			return <PostCard key={uuidv4()} {...props} />
-		}) */
-		return result
-		// eslint-disable-next-line
-	}, [postCards]);
-
-	const renderBtnsList = useCallback((posts) => {
-		let counter = Math.round(posts.length / 2);
-
-		const result = [];
-		for (let i = 1; i < counter; i++) {
-
-			result[i] =
-				<button
-					key={i}
-					className={`postlist-arrows__item ${currentPage === i ? "active" : ""}`}
-					onClick={() => {
-						setCounterPost(i);
-					}}
-				>{i}</button >
-		}
-		return result;
-		// eslint-disable-next-line
-	}, [counterPost])
+	const lastPostIndex = currentPage * postsPerPage;
+	const firtsPostIndex = lastPostIndex - postsPerPage;
+	const currentPost = postCards.slice(firtsPostIndex, lastPostIndex);
 
 	const onArrowClick = (counter, posts, plusOrMines = true) => {
 		const postLength = Math.floor(posts.length / 2);
-		console.log(postLength)
 		if (plusOrMines ? counter === 1 : counter === postLength - 1) {
 			return
 		}
-		setCounterPost(state => plusOrMines ? state - 1 : state + 1);
+		window.scrollBy(0, -1200);
+		setCurrentPage(state => plusOrMines ? state - 1 : state + 1);
 	}
 
-	const elementsPost = renderPosts(postCards, currentPage);
-	const elementsBtn = renderBtnsList(postCards);
+	const renderPosts = useCallback(posts => {
+		return posts.map(({ ...props }) => {
+			return <PostCard key={uuidv4()} {...props} />
+		})
+
+	}, [postCards]);
+	const onPostBtnClick = (index) => {
+		if (index === currentPage) {
+			return
+		}
+		setCurrentPage(index);
+		window.scrollBy(0, -1200);
+
+	}
+	const renderBtnsList = (postsPerPage, totalPosts) => {
+		const pageNumbers = [];
+
+		for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+			pageNumbers.push(<button
+				key={i}
+				onClick={() => onPostBtnClick(i)}
+				className={currentPage === i ? "active" : ""}
+			>{i}</button>);
+		}
+		return (pageNumbers)
+	}
+
+	const elementsPost = renderPosts(currentPost);
+	const elementsBtn = renderBtnsList(postsPerPage, postCards.length);
+
 	return (
 		<div className="postlist">
 			<div className="postlist-column">
@@ -81,7 +70,6 @@ const PostList = ({ postCards, setPostCards }) => {
 				/></button>
 			</div>
 		</div>
-
 	)
 }
 const PostCard = ({ category, title, description, date, img }) => {
