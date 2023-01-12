@@ -1,0 +1,135 @@
+.profile {
+	margin-top: 100px;
+	text-align: center;
+	form {
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+	}
+	input {
+		width: 50%;
+		align-self: center;
+		border: none;
+		border-bottom: 1px solid #3f3f3f;
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 16px;
+		background: none;
+		color: #ffffff;
+	}
+	input:focus {
+		transition: all 0.2s;
+		border-bottom: 1px solid #107eff;
+	}
+	input::placeholder {
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 16px;
+
+		color: rgba(255, 255, 255, 0.2);
+	}
+	button[type="submit"] {
+		width: 64px;
+		height: 30px;
+		border: none;
+		background: #3137c9;
+		box-shadow: 0px 4px 15px -7px rgba(48, 55, 201, 0.3);
+		border-radius: 5px;
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+		color: #ffffff;
+	}
+	&__header {
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 21px;
+		line-height: 21px;
+		color: #ffffff;
+	}
+	&__title {
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 21px;
+		line-height: 21px;
+		color: #ffffff;
+		text-align: left;
+	}
+	&-login {
+		button[type="submit"] {
+			width: 64px;
+			height: 30px;
+			border: none;
+			align-self: center;
+			background: #3137c9;
+			box-shadow: 0px 4px 15px -7px rgba(48, 55, 201, 0.3);
+			border-radius: 5px;
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 14px;
+			color: #ffffff;
+		}
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		font-family: "Roboto";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+		color: #ffffff;
+		a:hover {
+			color: #107eff;
+		}
+	}
+	&-info {
+		display: flex;
+		justify-content: space-between;
+		&__form {
+			form {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				input {
+					width: 340px;
+				}
+			}
+		}
+		&__avatar {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			max-width: 150px;
+			input[type="file"] {
+			}
+			label {
+				font-family: "Roboto";
+				font-style: normal;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 16px;
+				text-decoration-line: underline;
+				color: #107eff;
+			}
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+	}
+}
