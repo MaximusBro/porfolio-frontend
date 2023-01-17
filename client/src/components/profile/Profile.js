@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ProfileLogin from "./ProfileLogin";
 import ProfileUser from "./ProfileUser";
 import "../profile/profile.scss";
+import { motion } from "framer-motion";
 const Profile = () => {
 
 	const [user, setUser] = useState(() => {
@@ -28,7 +29,11 @@ const Profile = () => {
 	}, [user]);
 
 	return (
-		<section className="profile">
+		<motion.section className="profile"
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }
+			}
+			exit={{ opacity: 0 }}>
 			<div className="wrapper">
 				{
 					!login ?
@@ -41,7 +46,7 @@ const Profile = () => {
 							avatar={avatar} setAvatar={setAvatar}
 							setLogin={setLogin} />}
 			</div>
-		</section>
+		</motion.section>
 	)
 }
 

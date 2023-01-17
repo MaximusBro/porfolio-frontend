@@ -1,8 +1,13 @@
 import "../pages/myWorksPage.scss";
 import Work1 from "../../img/jpg/work1.jpg";
+import { motion } from "framer-motion";
 const MyWorksPage = () => {
 	return (
-		<section className="works">
+		<motion.section className="works"
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }
+			}
+			exit={{ opacity: 0 }}>
 			<div className="wrapper">
 				<div className="works__title">
 					<h2>My works</h2>
@@ -62,7 +67,7 @@ const MyWorksPage = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	)
 }
 export default MyWorksPage;

@@ -22,7 +22,8 @@ const postListSlice = createSlice({
 	reducers: {
 		PostCreated: (state, action) => {
 			postsAdapter.addOne(state, action.payload);
-		}
+		},
+		postsLoadingStatusChange: (state, action) => { state.postsLoadingStatus = action.payload }
 	},
 	extraReducers: (builder) => {
 		builder
@@ -49,5 +50,6 @@ export const PostCardsSelector = createSelector(
 	}
 );
 export const {
+	postsLoadingStatusChange,
 	PostCreated
 } = actions;

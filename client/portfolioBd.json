@@ -172,7 +172,8 @@
       "name": "Maksym",
       "email": "maxim@gmail.com",
       "password": "1234",
-      "id": 1
+      "id": 1,
+      "avatarSRC": "http://localhost:5000/images\\2023-01-17T17-59-27.118Zavatar.jpg"
     },
     {
       "name": "Valera",

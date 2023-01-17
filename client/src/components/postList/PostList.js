@@ -1,20 +1,40 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { BsDot } from "react-icons/bs"
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { useHttp } from "../hooks/http.hook";
+import { Transition } from 'react-transition-group';
+
 import "../postList/postList.scss";
 import { fetchPosts, PostCardsSelector } from "./PostListSlice"
 
 const PostList = () => {
-	const postCards = useSelector(PostCardsSelector)
+	// TRANSITION
+	const duration = 300;
+	const defaultStyle = {
+		transition: `opacity ${duration}ms ease-in-out`,
+		opacity: 0,
+	}
+
+	const transitionStyles = {
+		entering: { opacity: 1 },
+		entered: { opacity: 1 },
+		exiting: { opacity: 0 },
+		exited: { opacity: 0 },
+	};
+	//USESTATE && USESELECTOR
+	const postCards = useSelector(PostCardsSelector);
+	const [displayPosts, setdisplayPosts] = useState(true)
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsPerPage] = useState(3);
 
+	// FOR PAGINATION
 	const lastPostIndex = currentPage * postsPerPage;
 	const firtsPostIndex = lastPostIndex - postsPerPage;
 	const currentPost = postCards.slice(firtsPostIndex, lastPostIndex);
+
+
+	const myRef = useRef()
 
 	const dispatch = useDispatch();
 
@@ -24,14 +44,23 @@ const PostList = () => {
 	}, []);
 
 
+
 	const onArrowClick = (counter, plusOrMines = true) => {
+
 		const length = Math.ceil(postCards.length / postsPerPage)
 		console.log(length)
 		if (plusOrMines ? counter === 1 : counter === length) {
 			return
 		}
-		window.scrollBy(0, -1200);
-		setCurrentPage(state => plusOrMines ? state - 1 : state + 1);
+		myRef.current.scrollIntoView({
+			behavior: "smooth",
+		});
+		setdisplayPosts(false)
+		setTimeout(() => {
+			setdisplayPosts(true)
+			setCurrentPage(state => plusOrMines ? state - 1 : state + 1);
+		}, duration)
+
 	}
 
 	const renderPosts = useCallback(posts => {
@@ -42,12 +71,17 @@ const PostList = () => {
 	}, [postCards]);
 
 	const onPostBtnClick = (index) => {
-		if (index === currentPage) {
-			return
-		}
-		setCurrentPage(index);
-		window.scrollBy(0, -1200);
+		if (index === currentPage) return
 
+		setdisplayPosts(false)
+		setTimeout(() => {
+			setdisplayPosts(true)
+			setCurrentPage(index);
+		}, duration)
+
+		myRef.current.scrollIntoView({
+			behavior: "smooth",
+		});
 	}
 	const renderBtnsList = (postsPerPage, totalPosts) => {
 		const pageNumbers = [];
@@ -55,7 +89,10 @@ const PostList = () => {
 		for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
 			pageNumbers.push(<button
 				key={i}
-				onClick={() => onPostBtnClick(i)}
+				onClick={() => {
+					onPostBtnClick(i)
+
+				}}
 				className={currentPage === i ? "active" : ""}
 			>{i}</button>);
 		}
@@ -66,10 +103,21 @@ const PostList = () => {
 	const elementsBtn = renderBtnsList(postsPerPage, postCards.length);
 
 	return (
-		<div className="postlist">
-			<div className="postlist-column">
-				{elementsPost}
-			</div>
+		<div className="postlist" ref={myRef}>
+			<Transition in={displayPosts} timeout={duration}>
+				{state => (
+					<div className="postlist-column" style={{
+						...defaultStyle,
+						...transitionStyles[state]
+					}}>
+						{elementsPost}
+
+					</div>
+				)
+				}
+
+			</Transition >
+
 			<div className="postlist-arrows">
 				<button><MdKeyboardArrowLeft style={{ "width": "60%", "height": "100%" }}
 					onClick={() => onArrowClick(currentPage)}
@@ -82,7 +130,7 @@ const PostList = () => {
 
 				/></button>
 			</div>
-		</div>
+		</div >
 	)
 }
 const PostCard = ({ category, title, description, date, img }) => {

@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { useState, createRef } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import AnimatedRoutes from "../animatedRoutes/AnimatedRoutes";
 import AppHeader from "../appHeader/AppHeader";
 import AsideInfo from "../asideInfo/AsideInfo";
 import Modal from "../modal/Modal";
-import { useHttp } from "../hooks/http.hook";
-import { MainPage, MyWorksPage } from "../pages/index";
-import Profile from "../profile/Profile";
+
+
 function App() {
 	const [burger, setBurger] = useState(false);
 	const [modalContact, setModalContact] = useState(false);
-	const [postCards, setPostCards] = useState([]);
-	const { request } = useHttp();
+
+
+
 
 
 
@@ -21,11 +22,7 @@ function App() {
 				<AppHeader setBurger={setBurger} burger={burger} />
 
 				<div className="wrapper">
-					<Routes>
-						<Route path="/porfolio-frontend" element={<MainPage postCards={postCards} setPostCards={setPostCards} />}></Route>
-						<Route path="/porfolio-frontend/works" element={<MyWorksPage />}></Route>
-						<Route path="/porfolio-frontend/profile" element={<Profile />}></Route>
-					</Routes>
+					<AnimatedRoutes />
 				</div>
 
 				<Modal modalContact={modalContact}
