@@ -22,7 +22,7 @@ const ProfileUser = ({ user, avatar, setUser, setAvatar, setLogin }) => {
 			password
 		}
 
-		request(`http://localhost:3001/users/1/`,
+		request(`http://localhost:3001/users/${user.id}/`,
 			"PUT",
 			JSON.stringify(newUser));
 
@@ -51,9 +51,23 @@ const ProfileUser = ({ user, avatar, setUser, setAvatar, setLogin }) => {
 				}
 			})
 				.then(res => {
-					setAvatar(`http://localhost:5000/${res.data.path}`)
-					localStorage.setItem("avatarSRC", JSON.stringify(`http://localhost:5000/${res.data.path}`))
-				})
+					setUser(state => {
+						return {
+							...state,
+							avatarSRC: `http://localhost:5000/${res.data.path}`
+						}
+					})
+					localStorage.setItem("avatarSRC", JSON.stringify(`http://localhost:5000/${res.data.path}`));
+					const newSRC = {
+						...user,
+						avatarSRC: `http://localhost:5000/${res.data.path}`
+					}
+					request(`http://localhost:3001/users/${user.id}/`,
+						"PUT",
+						JSON.stringify(newSRC));
+
+				});
+
 		} catch (error) {
 
 		}
@@ -94,9 +108,9 @@ const ProfileUser = ({ user, avatar, setUser, setAvatar, setLogin }) => {
 				</div>
 				<div className="profile-info__avatar">
 					{
-						avatar
+						user.avatarSRC
 							?
-							<img src={avatar} alt="" />
+							<img src={user.avatarSRC} alt="" />
 							:
 							<img src={logo} alt="" />
 					}

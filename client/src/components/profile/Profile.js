@@ -26,6 +26,7 @@ const Profile = () => {
 	useEffect(() => {
 		localStorage.setItem("user", JSON.stringify(user))
 	}, [user]);
+
 	return (
 		<section className="profile">
 			<div className="wrapper">

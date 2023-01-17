@@ -12,13 +12,7 @@ function App() {
 	const [postCards, setPostCards] = useState([]);
 	const { request } = useHttp();
 
-	useEffect(() => {
 
-		request("http://localhost:3001/posts")
-			.then(data => setPostCards(data))
-			.catch(error => { throw new Error("Failude to get posts", error) })
-		// eslint-disable-next-line
-	}, []);
 
 	return (
 		<Router>

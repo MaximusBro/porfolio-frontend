@@ -20,7 +20,6 @@ const ProfileLogin = ({ setUser, setLogin }) => {
 				}
 
 			})
-
 	}
 	return (
 		<>

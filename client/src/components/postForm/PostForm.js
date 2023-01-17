@@ -4,10 +4,16 @@ import { IoMdSend } from "react-icons/io";
 import { useState } from "react";
 import { useHttp } from "../hooks/http.hook";
 import { v4 as uuidv4 } from 'uuid';
-const PostForm = ({ setPostCards }) => {
+import { useDispatch } from "react-redux";
+import { PostCreated } from "../postList/PostListSlice";
+const PostForm = () => {
+
 	const [text, setText] = useState("");
 	const [file, setFile] = useState([]);
+
 	const { request } = useHttp();
+	const dispatch = useDispatch();
+
 	const onChangeFile = e => {
 		console.log('file: ', file);
 		setFile(e.target.files[0]);
@@ -33,11 +39,12 @@ const PostForm = ({ setPostCards }) => {
 			title: text[0],
 			description: text,
 			date: `${date}.${month}.${year}`,
-			img: file
+			img: ""
 
 		}
-		request("http://localhost:3001/posts", "POST", JSON.stringify(newPost));
-		setPostCards(state => [...state, newPost])
+		request("http://localhost:3001/posts", "POST", JSON.stringify(newPost))
+			.then(dispatch(PostCreated(newPost)));
+
 		setFile("");
 		setText("");
 	}

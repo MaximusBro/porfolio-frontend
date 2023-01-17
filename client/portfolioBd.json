@@ -119,6 +119,30 @@
       "description": "Даров ребята, перший тестовий пост12312312312312",
       "date": "12.1.2023",
       "img": {}
+    },
+    {
+      "id": "dad352e3-8ebb-4eb5-b9e4-e418dac953a2",
+      "category": "all",
+      "title": "1",
+      "description": "13123123",
+      "date": "13.1.2023",
+      "img": {}
+    },
+    {
+      "id": "b3f97c58-4b98-459b-916a-6fabd4a32901",
+      "category": "all",
+      "title": "Д",
+      "description": "Даров ребята, це пост з використанням REDUX/TOOLKIT",
+      "date": "17.1.2023",
+      "img": {}
+    },
+    {
+      "id": "bee69b73-e594-40ca-b0c0-7b39fa082cc7",
+      "category": "all",
+      "title": "Д",
+      "description": "Даров ребята, перший тестовий пост",
+      "date": "17.1.2023",
+      "img": ""
     }
   ],
   "stories": [
@@ -145,8 +169,8 @@
   ],
   "users": [
     {
-      "name": "Vasya",
-      "email": "vasya@gmail.com",
+      "name": "Maksym",
+      "email": "maxim@gmail.com",
       "password": "1234",
       "id": 1
     },
@@ -154,6 +178,7 @@
       "name": "Valera",
       "email": "valera@gmail.com",
       "password": "321",
+      "avatarSRC": "http://localhost:5000/images\\2023-01-13T02-10-13.866Zkiriban maks2.png",
       "id": 2
     }
   ]

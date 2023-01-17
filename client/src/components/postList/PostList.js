@@ -1,11 +1,14 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { BsDot } from "react-icons/bs"
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import { useHttp } from "../hooks/http.hook";
 import "../postList/postList.scss";
+import { fetchPosts, PostCardsSelector } from "./PostListSlice"
 
-const PostList = ({ postCards }) => {
-
+const PostList = () => {
+	const postCards = useSelector(PostCardsSelector)
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsPerPage] = useState(3);
 
@@ -13,9 +16,18 @@ const PostList = ({ postCards }) => {
 	const firtsPostIndex = lastPostIndex - postsPerPage;
 	const currentPost = postCards.slice(firtsPostIndex, lastPostIndex);
 
-	const onArrowClick = (counter, posts, plusOrMines = true) => {
-		const postLength = Math.floor(posts.length / 2);
-		if (plusOrMines ? counter === 1 : counter === postLength - 1) {
+	const dispatch = useDispatch();
+
+
+	useEffect(() => {
+		dispatch(fetchPosts());
+	}, []);
+
+
+	const onArrowClick = (counter, plusOrMines = true) => {
+		const length = Math.ceil(postCards.length / postsPerPage)
+		console.log(length)
+		if (plusOrMines ? counter === 1 : counter === length) {
 			return
 		}
 		window.scrollBy(0, -1200);
@@ -28,6 +40,7 @@ const PostList = ({ postCards }) => {
 		})
 
 	}, [postCards]);
+
 	const onPostBtnClick = (index) => {
 		if (index === currentPage) {
 			return
@@ -59,13 +72,13 @@ const PostList = ({ postCards }) => {
 			</div>
 			<div className="postlist-arrows">
 				<button><MdKeyboardArrowLeft style={{ "width": "60%", "height": "100%" }}
-					onClick={() => onArrowClick(currentPage, postCards)}
+					onClick={() => onArrowClick(currentPage)}
 				/></button>
 				<ul className="postlist-arrows__list">
 					{elementsBtn}
 				</ul>
 				<button><MdKeyboardArrowRight style={{ "width": "60%", "height": "100%" }}
-					onClick={() => onArrowClick(currentPage, postCards, false)}
+					onClick={() => onArrowClick(currentPage, false)}
 
 				/></button>
 			</div>
