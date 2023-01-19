@@ -36,11 +36,16 @@ const AsideInfo = ({ burger, modalContact, setModalContact }) => {
 									<li><a href="#">Video</a></li>
 								</ul>
 							</li>
+							<li>
+								<Link to="/porfolio-frontend">Main</Link>
+							</li>
 							<li><a>About Me</a></li>
 							<li>
 								<a>AD</a>
 							</li>
-							<li><Link to="/frontend-blog/profile">Profile</Link></li>
+							<li>
+								<Link to="/porfolio-frontend/profile">Profile</Link>
+							</li>
 						</ul>
 					</div>
 					<div className="aside-main__description">
@@ -50,7 +55,9 @@ const AsideInfo = ({ burger, modalContact, setModalContact }) => {
 						</p>
 					</div>
 					<div className="aside-main__links">
-						<Link to={"/porfolio-frontend/works"}><button className="button" style={{ "backgroundColor": "#ed3024" }}>Мои работы</button></Link>
+						<Link to={"/porfolio-frontend/works"}>
+							<button className="button" style={{ "backgroundColor": "#ed3024" }}>Мои работы</button>
+						</Link>
 						<button
 							className="button"
 							style={{ "backgroundColor": "#3137c9" }}

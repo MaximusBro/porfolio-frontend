@@ -1,0 +1,205 @@
+@import "../../style/mixins.scss";
+.post {
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	&-card {
+		background: #202020;
+		width: 600px;
+		box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.35);
+		border-radius: 5px;
+		&__wrapper {
+			max-width: 550px;
+			margin: 0 auto;
+		}
+		&__header {
+			margin-top: 15px;
+
+			&__btns {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				@include roboto;
+				p {
+					font-size: 12px;
+					line-height: 14px;
+					opacity: 0.6;
+				}
+				button {
+					background: none;
+					border: none;
+					color: white;
+					font-size: 12px;
+					line-height: 14px;
+					opacity: 0.6;
+				}
+			}
+			&__title {
+				margin-top: 15px;
+				@include roboto;
+				color: #ffffff;
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+				div:last-child {
+					display: flex;
+					gap: 7px;
+					@include lato;
+					font-size: 12px;
+					line-height: 14px;
+					color: #828282;
+				}
+			}
+		}
+		&__text {
+			margin-top: 30px;
+			@include roboto;
+			font-size: 14px;
+			line-height: 21px;
+			color: #ffffff;
+			img {
+				margin: 25px 0;
+				max-width: 100%;
+			}
+		}
+		&-recommendation {
+			margin-top: 60px;
+			h3 {
+				@include roboto;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 19px;
+				color: #ffffff;
+			}
+			&__column {
+				margin-top: 20px;
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+			}
+			&__card {
+				margin-bottom: 25px;
+				display: flex;
+				flex-direction: column;
+				h4 {
+					@include roboto;
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 16px;
+
+					color: #f3eba2;
+				}
+				p {
+					@include lato;
+					font-size: 12px;
+					line-height: 14px;
+					color: #828282;
+				}
+			}
+		}
+		&-commentary {
+			&__form {
+				&__title {
+					@include roboto;
+					font-size: 16px;
+					line-height: 19px;
+					color: #ffffff;
+				}
+				form {
+					margin-top: 20px;
+					display: flex;
+					flex-wrap: wrap;
+
+					input {
+						width: 100%;
+						align-self: center;
+						border: none;
+						border-bottom: 1px solid #3f3f3f;
+						font-family: "Roboto";
+						font-style: normal;
+						font-weight: 400;
+						font-size: 14px;
+						line-height: 16px;
+						background: none;
+						color: #ffffff;
+						margin-bottom: 20px;
+					}
+					input:focus {
+						transition: all 0.2s;
+						border-bottom: 1px solid #107eff;
+					}
+					input::placeholder {
+						font-family: "Roboto";
+						font-style: normal;
+						font-weight: 400;
+						font-size: 14px;
+						line-height: 16px;
+
+						color: rgba(255, 255, 255, 0.2);
+					}
+					button[type="submit"] {
+						width: 64px;
+						height: 30px;
+						border: none;
+						background: #3137c9;
+						box-shadow: 0px 4px 15px -7px rgba(48, 55, 201, 0.3);
+						border-radius: 5px;
+						@include roboto;
+						font-size: 12px;
+						line-height: 14px;
+						color: #ffffff;
+					}
+				}
+			}
+			&__column {
+				margin-top: 50px;
+				display: flex;
+				flex-direction: column;
+			}
+			&__comment {
+				margin-bottom: 20px;
+				&__header {
+					display: flex;
+					gap: 16px;
+					img {
+						max-width: 30px;
+						max-height: 30px;
+						border-radius: 50px;
+					}
+					div {
+						@include roboto;
+						h4 {
+							font-size: 12px;
+							line-height: 14px;
+							color: #ffffff;
+						}
+						p {
+							font-size: 12px;
+							line-height: 14px;
+							color: #ffffff;
+							opacity: 0.6;
+						}
+					}
+				}
+				&__text {
+					margin-top: 15px;
+					@include roboto;
+					font-size: 12px;
+					line-height: 14px;
+					color: #ffffff;
+				}
+				button {
+					background: none;
+					border: none;
+					@include roboto;
+					font-size: 12px;
+					line-height: 14px;
+					color: #107eff;
+				}
+			}
+			&__subcomment {
+				margin: 25px 0 0 30px;
+			}
+		}
+	}
+}

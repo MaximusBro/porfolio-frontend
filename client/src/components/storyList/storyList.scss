@@ -5,12 +5,9 @@
 
 	&-column {
 		display: flex;
-		flex-shrink: 1;
-		flex-direction: row;
 		gap: 10px;
 		overflow: auto;
-		width: 100%;
-		align-items: flex-start;
+
 		&-card {
 			min-width: 140px;
 			min-height: 195px;
@@ -18,7 +15,6 @@
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: flex-end;
-			background-image: url("../../../public/img/backgroundStory.jpg");
 			background-size: cover;
 
 			border-radius: 5px;
@@ -33,10 +29,9 @@
 			&__title {
 				display: flex;
 				align-self: flex-start;
-				margin: 15px 0 0 13px;
+				margin: 10px 0 0 20px;
 			}
 			&__date {
-				padding: 0 12px 11px 0;
 			}
 		}
 	}

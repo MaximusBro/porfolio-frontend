@@ -3,6 +3,7 @@ import { useHttp } from "../hooks/http.hook";
 import "../storyList/storyList.scss";
 const StoryList = () => {
 	const [stories, setStories] = useState([]);
+	const limitStories = 4;
 
 	const { request } = useHttp();
 
@@ -15,7 +16,7 @@ const StoryList = () => {
 	}, []);
 
 	const renderStories = (arr) => {
-		return arr.filter((item, index) => index < 4).map(({ ...props }, index) => {
+		return arr.filter((item, index) => index < limitStories).map(({ ...props }, index) => {
 			return <Story key={index} {...props} />
 		})
 	}
@@ -24,14 +25,16 @@ const StoryList = () => {
 		<div className="story">
 			<div className="story-column">
 				{elementsStory}
-
 			</div>
 		</div>
 	)
 }
-const Story = ({ title, date }) => {
+const Story = ({ title, date, imgSRC }) => {
 	return (
-		<div className="story-column-card">
+		<div className="story-column-card"
+			style={{
+				backgroundImage: `url( "${imgSRC}"`
+			}}>
 			<div className="story-column-card__title">
 				<h2>{title}</h2>
 			</div>

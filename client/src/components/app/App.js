@@ -1,6 +1,6 @@
 import { useState, createRef } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import AnimatedRoutes from "../animatedRoutes/AnimatedRoutes";
+import AnimatedRoutes from "../animatedRoutes/AnimatedRoutes"
 import AppHeader from "../appHeader/AppHeader";
 import AsideInfo from "../asideInfo/AsideInfo";
 import Modal from "../modal/Modal";
@@ -9,10 +9,6 @@ import Modal from "../modal/Modal";
 function App() {
 	const [burger, setBurger] = useState(false);
 	const [modalContact, setModalContact] = useState(false);
-
-
-
-
 
 
 	return (

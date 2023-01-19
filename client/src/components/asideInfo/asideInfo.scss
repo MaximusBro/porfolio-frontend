@@ -6,6 +6,7 @@
 	float: left;
 	background: #202020;
 	box-shadow: 5px 0px 15px rgba(5, 5, 5, 0.1);
+	z-index: 10;
 	&-main {
 		position: relative;
 		&-intro {
