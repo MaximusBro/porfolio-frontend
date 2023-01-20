@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import posts from '../components/postList/PostListSlice';
+import user from "./slices/userSlices"
 /* 
 const store = configureStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) */
 
@@ -14,7 +15,7 @@ const stringMiddleware = () => (dispatch) => (action) => {
 
 
 const store = configureStore({
-	reducer: { posts },
+	reducer: { posts, user },
 	middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),
 	devTools: process.env.NODE_ENV !== "production",
 

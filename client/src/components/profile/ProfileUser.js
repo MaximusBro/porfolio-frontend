@@ -2,18 +2,29 @@ import logo from "../../../src/img/png/avatarProfile.png";
 import axios from "axios"
 import { useState, useCallback } from "react";
 import { useHttp } from "../hooks/http.hook";
-
+import { useSelector } from "react-redux";
 const ProfileUser = ({ user, avatar, setUser, setAvatar, setLogin }) => {
-	const [name, setName] = useState(user.name);
+
+	const {
+		email,
+		name,
+		id,
+		avatarSRC,
+		token } = useSelector(state => state.user)
+
+
+
+	/* const [name, setName] = useState(user.name);
 	const [email, setEmail] = useState(user.email);
 	const [password, setPassword] = useState(user.password);
 	const [confirmPassword, setConfirmPassword] = useState("")
 
 	const [img, setImg] = useState(null);
+ */
 
 
-	const { request } = useHttp();
-	const onSubmit = (event) => {
+
+	/* const onSubmit = (event) => {
 		event.preventDefault();
 
 		const newUser = {
@@ -33,8 +44,8 @@ const ProfileUser = ({ user, avatar, setUser, setAvatar, setLogin }) => {
 			}
 		});
 		setConfirmPassword("")
-	}
-	const chackNewPassword = (event) => {
+	} */
+	/* const chackNewPassword = (event) => {
 		if (event.target.value === confirmPassword) {
 			setPassword(event.target.value)
 		} else {
@@ -71,7 +82,7 @@ const ProfileUser = ({ user, avatar, setUser, setAvatar, setLogin }) => {
 		} catch (error) {
 
 		}
-	}, [img])
+	}, [img]) */
 	return (
 		<>
 			<div className="profile__title">
@@ -79,45 +90,35 @@ const ProfileUser = ({ user, avatar, setUser, setAvatar, setLogin }) => {
 			</div>
 			<div className="profile-info">
 				<div className="profile-info__form">
-					<form action="" onSubmit={onSubmit}>
+					<form action="" >
 						<input type="text"
 							value={name}
 							placeholder="Name"
-							onChange={(e) => setName(e.target.value)} />
+						/>
 						<input type="email"
 							placeholder="Email"
 							value={email}
-							onChange={(e) => setEmail(e.target.value)} />
+						/>
 
 						<input type="password"
 							placeholder="New password"
-							value={confirmPassword}
-							onChange={(e) => setConfirmPassword(e.target.value)} />
+
+						/>
 
 						<input type="password"
 							placeholder="Confirm password"
-							onChange={chackNewPassword} />
+						/>
 
 						<button type="submit">Submit</button>
-						<button onClick={() => {
-							setLogin(false);
-							setUser(null)
-
-						}}>Logout</button>
+						<button >Logout</button>
 					</form>
 				</div>
 				<div className="profile-info__avatar">
-					{
-						user.avatarSRC
-							?
-							<img src={user.avatarSRC} alt="" />
-							:
-							<img src={logo} alt="" />
-					}
-					<input type="file" onChange={e => setImg(e.target.files[0])}
+
+					<input type="file"
 
 						placeholder="Choose file" />
-					<button className="btn" onClick={sendFile}>Change Avatar</button>
+					<button className="btn">Change Avatar</button>
 				</div>
 			</div>
 		</>
